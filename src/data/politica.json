@@ -1,403 +1,707 @@
 {
+  "marca": "TOYOTA",
   "mesReferencia": "NOVEMBRO/2026",
   "modelos": [
     {
-      "modelo": "DOLPHIN MINI GS5",
-      "anoModelo": "",
-      "pps": 119990,
-      "margem": 0.06,
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XR 1.5 CVT",
+      "anoModelo": "26 / 26",
+      "pps": 129990,
+      "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 117000,
-        "BYD GOIANIA": 117000,
-        "BYD BH": 117000,
-        "BYD ES - GRANDE VITORIA": 117000,
-        "BYD ES - INTERIOR": 117000,
-        "BYD GOIAS - INTERIOR": 117000,
-        "BYD MG - INTERIOR": 117000
+        "TOYOTA BRASILIA": 129990,
+        "TOYOTA GBH": 127500,
+        "TOYOTA ES": 127500,
+        "TOYOTA LESTE & ZM": 127500,
+        "TOYOTA TRIMG": 127990
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "BYD DOLPHIN GS ( Com Rev.)",
-      "anoModelo": "",
-      "pps": 149990,
-      "margem": 0.06,
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XRE 1.5 CVT",
+      "anoModelo": "26 / 26",
+      "pps": 148000,
+      "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 149990,
-        "BYD GOIANIA": 149990,
-        "BYD BH": 149990,
-        "BYD ES - GRANDE VITORIA": 149990,
-        "BYD ES - INTERIOR": 149990,
-        "BYD GOIAS - INTERIOR": 149990,
-        "BYD MG - INTERIOR": 149990
-      },
-      "observacao": "03 PRIMEIRAS REVISOES GRATIS",
-      "tipoAutorizacao": "REGIONAL"
-    },
-    {
-      "modelo": "BYD DOLPHIN GS ( Sem Rev. )",
-      "anoModelo": "",
-      "pps": 149990,
-      "margem": 0.06,
-      "lb": 0,
-      "bonus": 0,
-      "regionais": {
-        "BYD BRASILIA": 147990,
-        "BYD GOIANIA": 147990,
-        "BYD BH": 147990,
-        "BYD ES - GRANDE VITORIA": 147990,
-        "BYD ES - INTERIOR": 147990,
-        "BYD GOIAS - INTERIOR": 147990,
-        "BYD MG - INTERIOR": 147990
-      },
-      "observacao": "SEM REVISÕES",
-      "tipoAutorizacao": "REGIONAL"
-    },
-    {
-      "modelo": "DOLPHIN SPEC ED",
-      "anoModelo": "",
-      "pps": 173990,
-      "margem": 0.06,
-      "lb": 0,
-      "bonus": 0,
-      "regionais": {
-        "BYD BRASILIA": 168500,
-        "BYD GOIANIA": 168500,
-        "BYD BH": 168500,
-        "BYD ES - GRANDE VITORIA": 168500,
-        "BYD ES - INTERIOR": 168500,
-        "BYD GOIAS - INTERIOR": 168500,
-        "BYD MG - INTERIOR": 168500
+        "TOYOTA BRASILIA": 148000,
+        "TOYOTA GBH": 146990,
+        "TOYOTA ES": 146990,
+        "TOYOTA LESTE & ZM": 146990,
+        "TOYOTA TRIMG": 146990
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "I/BYD YUAN PRO GS (25/26)",
-      "anoModelo": "25/26",
-      "pps": 182990,
-      "margem": 0.06,
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XRX 1.5L",
+      "anoModelo": "26 / 26",
+      "pps": 164000,
+      "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 164990,
-        "BYD GOIANIA": 164990,
-        "BYD BH": 164990,
-        "BYD ES - GRANDE VITORIA": 164990,
-        "BYD ES - INTERIOR": 164990,
-        "BYD GOIAS - INTERIOR": 164990,
-        "BYD MG - INTERIOR": 164990
+        "TOYOTA BRASILIA": 164000,
+        "TOYOTA GBH": 158990,
+        "TOYOTA ES": 158990,
+        "TOYOTA LESTE & ZM": 158990,
+        "TOYOTA TRIMG": 158990
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "I/BYD YUAN PRO GS (26/27)",
-      "anoModelo": "26/27",
-      "pps": 182990,
-      "margem": 0.06,
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XRE HYBRID 1.5L",
+      "anoModelo": "26 / 26",
+      "pps": 159990,
+      "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 169990,
-        "BYD GOIANIA": 169990,
-        "BYD BH": 169990,
-        "BYD ES - GRANDE VITORIA": 169990,
-        "BYD ES - INTERIOR": 169990,
-        "BYD GOIAS - INTERIOR": 169990,
-        "BYD MG - INTERIOR": 169990
+        "TOYOTA BRASILIA": 159990,
+        "TOYOTA GBH": 158990,
+        "TOYOTA ES": 149990,
+        "TOYOTA LESTE & ZM": 158990,
+        "TOYOTA TRIMG": 158990
       },
-      "observacao": "Taxa 0% OU 20k Trade -in BYD-BYD OU 10k Varejo",
+      "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "KING GS (26/27)",
-      "anoModelo": "27/26",
-      "pps": 175990,
-      "margem": 0.06,
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XRX 1.5 HYBRID",
+      "anoModelo": "26 / 26",
+      "pps": 172000,
+      "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 166990,
-        "BYD GOIANIA": 166990,
-        "BYD BH": 166990,
-        "BYD ES - GRANDE VITORIA": 166990,
-        "BYD ES - INTERIOR": 166990,
-        "BYD GOIAS - INTERIOR": 166990,
-        "BYD MG - INTERIOR": 166990
+        "TOYOTA BRASILIA": 172000,
+        "TOYOTA GBH": 165990,
+        "TOYOTA ES": 159990,
+        "TOYOTA LESTE & ZM": 165990,
+        "TOYOTA TRIMG": 165990
       },
-      "observacao": "5K Varejo",
+      "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "ATTO 2 GS",
-      "anoModelo": "",
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XR 1.5 CVT",
+      "anoModelo": "26 / 27",
+      "pps": 129990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 129990,
+        "TOYOTA GBH": 129990,
+        "TOYOTA ES": 131920,
+        "TOYOTA LESTE & ZM": 129990,
+        "TOYOTA TRIMG": 128900
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XRE 1.5 CVT",
+      "anoModelo": "26 / 27",
+      "pps": 148000,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 148000,
+        "TOYOTA GBH": 148990,
+        "TOYOTA ES": 147990,
+        "TOYOTA LESTE & ZM": 148990,
+        "TOYOTA TRIMG": 139990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XRX 1.5L",
+      "anoModelo": "26 / 27",
+      "pps": 164000,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 164000,
+        "TOYOTA GBH": 159990,
+        "TOYOTA ES": 165990,
+        "TOYOTA LESTE & ZM": 159990,
+        "TOYOTA TRIMG": 159990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XRE HYBRID 1.5L",
+      "anoModelo": "26 / 27",
+      "pps": 159990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 159990,
+        "TOYOTA GBH": 159990,
+        "TOYOTA ES": 156990,
+        "TOYOTA LESTE & ZM": 159990,
+        "TOYOTA TRIMG": 154990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "YARIS CROSS",
+      "modelo": "YARIS CROSS XRX 1.5 HYBRID",
+      "anoModelo": "26 / 27",
+      "pps": 172000,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 172000,
+        "TOYOTA GBH": 169990,
+        "TOYOTA ES": 175990,
+        "TOYOTA LESTE & ZM": 169990,
+        "TOYOTA TRIMG": 169990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "COROLLA",
+      "modelo": "COROLLA XEI 2.0 FLEX",
+      "anoModelo": "26 / 26",
+      "pps": 159990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 159990,
+        "TOYOTA GBH": 159990,
+        "TOYOTA ES": 161320,
+        "TOYOTA LESTE & ZM": 159990,
+        "TOYOTA TRIMG": 159990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "COROLLA",
+      "modelo": "COROLLA ALTIS 2.0 FLEX",
+      "anoModelo": "26 / 26",
+      "pps": 189990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 189990,
+        "TOYOTA GBH": 204320,
+        "TOYOTA ES": 192990,
+        "TOYOTA LESTE & ZM": 204320,
+        "TOYOTA TRIMG": 189990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "COROLLA",
+      "modelo": "COROLLA ALTIS 1.8 HYBRID PREMIUM",
+      "anoModelo": "26 / 26",
+      "pps": 192990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 192990,
+        "TOYOTA GBH": 192990,
+        "TOYOTA ES": 192990,
+        "TOYOTA LESTE & ZM": 192990,
+        "TOYOTA TRIMG": 189990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "COROLLA",
+      "modelo": "COROLLA GR-S",
+      "anoModelo": "26 / 26",
+      "pps": 189990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 189990,
+        "TOYOTA GBH": 200000,
+        "TOYOTA ES": 189990,
+        "TOYOTA LESTE & ZM": 200000,
+        "TOYOTA TRIMG": 200000
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "COROLLA CROSS",
+      "modelo": "COROLLA CROSS XRE 2.0 FLEX",
+      "anoModelo": "26 / 27",
       "pps": 169990,
-      "margem": 0.06,
+      "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 168990,
-        "BYD GOIANIA": 168990,
-        "BYD BH": 168990,
-        "BYD ES - GRANDE VITORIA": 168990,
-        "BYD ES - INTERIOR": 168990,
-        "BYD GOIAS - INTERIOR": 168990,
-        "BYD MG - INTERIOR": 168990
+        "TOYOTA BRASILIA": 169990,
+        "TOYOTA GBH": 169990,
+        "TOYOTA ES": 171120,
+        "TOYOTA LESTE & ZM": 169990,
+        "TOYOTA TRIMG": 166000
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "SONG PRO GS (25/26)",
-      "anoModelo": "26/25",
-      "pps": 199990,
-      "margem": 0.06,
+      "familia": "COROLLA CROSS",
+      "modelo": "COROLLA CROSS XRV 1.8 HYBRID",
+      "anoModelo": "26 / 27",
+      "pps": 191000,
+      "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 184990,
-        "BYD GOIANIA": 184990,
-        "BYD BH": 184990,
-        "BYD ES - GRANDE VITORIA": 184990,
-        "BYD ES - INTERIOR": 184990,
-        "BYD GOIAS - INTERIOR": 184990,
-        "BYD MG - INTERIOR": 184990
+        "TOYOTA BRASILIA": 191000,
+        "TOYOTA GBH": 189990,
+        "TOYOTA ES": 187990,
+        "TOYOTA LESTE & ZM": 189990,
+        "TOYOTA TRIMG": 189990
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "SONG PRO GS (26/27)",
-      "anoModelo": "27/26",
-      "pps": 199990,
-      "margem": 0.06,
+      "familia": "COROLLA CROSS",
+      "modelo": "COROLLA CROSS XRX 1.8 HYBRID",
+      "anoModelo": "26 / 27",
+      "pps": 197000,
+      "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 184990,
-        "BYD GOIANIA": 184990,
-        "BYD BH": 184990,
-        "BYD ES - GRANDE VITORIA": 184990,
-        "BYD ES - INTERIOR": 184990,
-        "BYD GOIAS - INTERIOR": 184990,
-        "BYD MG - INTERIOR": 184990
-      },
-      "observacao": "10K Varejo",
-      "tipoAutorizacao": "REGIONAL"
-    },
-    {
-      "modelo": "SONG PRO GS FLEX (26/27)",
-      "anoModelo": "26/27",
-      "pps": 199990,
-      "margem": 0.06,
-      "lb": 0,
-      "bonus": 0,
-      "regionais": {
-        "BYD BRASILIA": 198990,
-        "BYD GOIANIA": 198990,
-        "BYD BH": 198990,
-        "BYD ES - GRANDE VITORIA": 198990,
-        "BYD ES - INTERIOR": 198990,
-        "BYD GOIAS - INTERIOR": 198990,
-        "BYD MG - INTERIOR": 198990
+        "TOYOTA BRASILIA": 197000,
+        "TOYOTA GBH": 202990,
+        "TOYOTA ES": 205990,
+        "TOYOTA LESTE & ZM": 202990,
+        "TOYOTA TRIMG": 199990
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "SONG PLUS GS 1.5T",
-      "anoModelo": "",
-      "pps": 249990,
+      "familia": "COROLLA CROSS",
+      "modelo": "COROLLA CROSS XRX 2.0L",
+      "anoModelo": "26 / 27",
+      "pps": 190000,
       "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 234990,
-        "BYD GOIANIA": 234990,
-        "BYD BH": 234990,
-        "BYD ES - GRANDE VITORIA": 234990,
-        "BYD ES - INTERIOR": 234990,
-        "BYD GOIAS - INTERIOR": 234990,
-        "BYD MG - INTERIOR": 234990
-      },
-      "observacao": "Taxa 0% + 15K Varejo (Rebate 10K)",
-      "tipoAutorizacao": "REGIONAL"
-    },
-    {
-      "modelo": "I/BYD SONG PLUS PREM SEM TRADE-IN",
-      "anoModelo": "",
-      "pps": 299890,
-      "margem": 0.08,
-      "lb": 0,
-      "bonus": 0,
-      "regionais": {
-        "BYD BRASILIA": 254800,
-        "BYD GOIANIA": 254800,
-        "BYD BH": 254800,
-        "BYD ES - GRANDE VITORIA": 254800,
-        "BYD ES - INTERIOR": 254800,
-        "BYD GOIAS - INTERIOR": 254800,
-        "BYD MG - INTERIOR": 254800
-      },
-      "observacao": "Taxa 0% + 45K Varejo (Rebate 15K)",
-      "tipoAutorizacao": "REGIONAL"
-    },
-    {
-      "modelo": "I/BYD SONG PLUS PREM COM TRADE-IN",
-      "anoModelo": "",
-      "pps": 299890,
-      "margem": 0.08,
-      "lb": 0,
-      "bonus": 0,
-      "regionais": {
-        "BYD BRASILIA": 254800,
-        "BYD GOIANIA": 254800,
-        "BYD BH": 254800,
-        "BYD ES - GRANDE VITORIA": 254800,
-        "BYD ES - INTERIOR": 254800,
-        "BYD GOIAS - INTERIOR": 254800,
-        "BYD MG - INTERIOR": 254800
-      },
-      "observacao": "Trade-in R$ 30.000,00 + 45K Varejo (Rebate 20K)",
-      "tipoAutorizacao": "REGIONAL"
-    },
-    {
-      "modelo": "I/BYD SHARK GS DM (24/25 E 25/26)",
-      "anoModelo": "24/25 | 25/26",
-      "pps": 344800,
-      "margem": 0.08,
-      "lb": 0,
-      "bonus": 0,
-      "regionais": {
-        "BYD BRASILIA": 299990,
-        "BYD GOIANIA": 299990,
-        "BYD BH": 299990,
-        "BYD ES - GRANDE VITORIA": 299990,
-        "BYD ES - INTERIOR": 299990,
-        "BYD GOIAS - INTERIOR": 299990,
-        "BYD MG - INTERIOR": 299990
-      },
-      "observacao": "10k Varejo",
-      "tipoAutorizacao": "REGIONAL"
-    },
-    {
-      "modelo": "I/BYD TAN AWD GS 700EV",
-      "anoModelo": "",
-      "pps": 349990,
-      "margem": 0,
-      "lb": 0,
-      "bonus": 0,
-      "regionais": {
-        "BYD BRASILIA": 349990,
-        "BYD GOIANIA": 349990,
-        "BYD BH": 349990,
-        "BYD ES - GRANDE VITORIA": 349990,
-        "BYD ES - INTERIOR": 349990,
-        "BYD GOIAS - INTERIOR": 349990,
-        "BYD MG - INTERIOR": 349990
+        "TOYOTA BRASILIA": 190000,
+        "TOYOTA GBH": 188990,
+        "TOYOTA ES": 199990,
+        "TOYOTA LESTE & ZM": 188990,
+        "TOYOTA TRIMG": 188990
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "I/BYD YUAN PLUS GL",
-      "anoModelo": "",
-      "pps": 235990,
+      "familia": "COROLLA CROSS",
+      "modelo": "COROLLA CROSS GR-SPORT",
+      "anoModelo": "26 / 27",
+      "pps": 195000,
       "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 217000,
-        "BYD GOIANIA": 217000,
-        "BYD BH": 217000,
-        "BYD ES - GRANDE VITORIA": 217000,
-        "BYD ES - INTERIOR": 217000,
-        "BYD GOIAS - INTERIOR": 217000,
-        "BYD MG - INTERIOR": 217000
+        "TOYOTA BRASILIA": 195000,
+        "TOYOTA GBH": 205000,
+        "TOYOTA ES": 193990,
+        "TOYOTA LESTE & ZM": 205000,
+        "TOYOTA TRIMG": 205000
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "YUAN PLUS AWD",
-      "anoModelo": "",
+      "familia": "HILUX",
+      "modelo": "HILUX SRV DSL",
+      "anoModelo": "26 / 26",
       "pps": 269990,
       "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 252990,
-        "BYD GOIANIA": 252990,
-        "BYD BH": 252990,
-        "BYD ES - GRANDE VITORIA": 252990,
-        "BYD ES - INTERIOR": 252990,
-        "BYD GOIAS - INTERIOR": 252990,
-        "BYD MG - INTERIOR": 252990
+        "TOYOTA BRASILIA": 269990,
+        "TOYOTA GBH": 269990,
+        "TOYOTA ES": 269990,
+        "TOYOTA LESTE & ZM": 269990,
+        "TOYOTA TRIMG": 262000
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "I/BYD SEAL",
-      "anoModelo": "",
-      "pps": 299990,
+      "familia": "HILUX",
+      "modelo": "HILUX SRX DSL",
+      "anoModelo": "26 / 26",
+      "pps": 293000,
       "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 284990,
-        "BYD GOIANIA": 284990,
-        "BYD BH": 284990,
-        "BYD ES - GRANDE VITORIA": 284990,
-        "BYD ES - INTERIOR": 284990,
-        "BYD GOIAS - INTERIOR": 284990,
-        "BYD MG - INTERIOR": 284990
-      },
-      "observacao": "Taxa 0% OU 30k Trade -in BYD-BYD",
-      "tipoAutorizacao": "REGIONAL"
-    },
-    {
-      "modelo": "SEALION 7 GS",
-      "anoModelo": "",
-      "pps": 339990,
-      "margem": 0.08,
-      "lb": 0,
-      "bonus": 0,
-      "regionais": {
-        "BYD BRASILIA": 329990,
-        "BYD GOIANIA": 329990,
-        "BYD BH": 329990,
-        "BYD ES - GRANDE VITORIA": 329990,
-        "BYD ES - INTERIOR": 329990,
-        "BYD GOIAS - INTERIOR": 329990,
-        "BYD MG - INTERIOR": 329990
+        "TOYOTA BRASILIA": 293000,
+        "TOYOTA GBH": 301990,
+        "TOYOTA ES": 295990,
+        "TOYOTA LESTE & ZM": 301990,
+        "TOYOTA TRIMG": 300000
       },
       "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     },
     {
-      "modelo": "ATTO 8 GS DM",
-      "anoModelo": "",
-      "pps": 399990,
+      "familia": "HILUX",
+      "modelo": "HILUX SRX PLUS DSL",
+      "anoModelo": "26 / 26",
+      "pps": 303000,
       "margem": 0.08,
       "lb": 0,
       "bonus": 0,
       "regionais": {
-        "BYD BRASILIA": 389990,
-        "BYD GOIANIA": 389990,
-        "BYD BH": 389990,
-        "BYD ES - GRANDE VITORIA": 389990,
-        "BYD ES - INTERIOR": 389990,
-        "BYD GOIAS - INTERIOR": 389990,
-        "BYD MG - INTERIOR": 389990
+        "TOYOTA BRASILIA": 303000,
+        "TOYOTA GBH": 309000,
+        "TOYOTA ES": 305990,
+        "TOYOTA LESTE & ZM": 309000,
+        "TOYOTA TRIMG": 305000
       },
-      "observacao": "Taxa 0% OU 20k Trade -in BYD-BYD OU 10k Trade -in Outros",
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "SW4",
+      "modelo": "SW4 SRX PLATINUM DSL 5L AT",
+      "anoModelo": "26 / 26",
+      "pps": 359990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 359990,
+        "TOYOTA GBH": 359990,
+        "TOYOTA ES": 359990,
+        "TOYOTA LESTE & ZM": 359990,
+        "TOYOTA TRIMG": 359990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "SW4",
+      "modelo": "SW4 SRX PLATINUM DSL 7L AT",
+      "anoModelo": "26 / 26",
+      "pps": 365000,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 365000,
+        "TOYOTA GBH": 363990,
+        "TOYOTA ES": 365990,
+        "TOYOTA LESTE & ZM": 366990,
+        "TOYOTA TRIMG": 360000
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "SW4",
+      "modelo": "SW4 DSL DIAMOND",
+      "anoModelo": "26 / 26",
+      "pps": 402000,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 402000,
+        "TOYOTA GBH": 411990,
+        "TOYOTA ES": 405990,
+        "TOYOTA LESTE & ZM": 405000,
+        "TOYOTA TRIMG": 411990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "RAV4",
+      "modelo": "RAV4 S 2.5L HYBRID",
+      "anoModelo": "26 / 26",
+      "pps": 299000,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 299000,
+        "TOYOTA GBH": 289990,
+        "TOYOTA ES": 299990,
+        "TOYOTA LESTE & ZM": 289990,
+        "TOYOTA TRIMG": 289990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "RAV4",
+      "modelo": "RAV4 SX 2.5L HYBRID",
+      "anoModelo": "26 / 26",
+      "pps": 339000,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 339000,
+        "TOYOTA GBH": 349720,
+        "TOYOTA ES": 349720,
+        "TOYOTA LESTE & ZM": 349720,
+        "TOYOTA TRIMG": 349720
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "RAV4",
+      "modelo": "RAV4 PHEV 2.5L",
+      "anoModelo": "26 / 26",
+      "pps": 370000,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 370000,
+        "TOYOTA GBH": 390420,
+        "TOYOTA ES": 390420,
+        "TOYOTA LESTE & ZM": 390420,
+        "TOYOTA TRIMG": 390420
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "BZ4X",
+      "modelo": "BZ4X BEV AWD",
+      "anoModelo": "26 / 26",
+      "pps": 422420,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 422420,
+        "TOYOTA GBH": 422420,
+        "TOYOTA ES": 422420,
+        "TOYOTA LESTE & ZM": 422420,
+        "TOYOTA TRIMG": 349990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "RX 500H - F-SPORT",
+      "anoModelo": "26 / 27",
+      "pps": 619990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 619990,
+        "TOYOTA GBH": 619990,
+        "TOYOTA ES": 619990,
+        "TOYOTA LESTE & ZM": 619990,
+        "TOYOTA TRIMG": 619990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "RX 450H+ - PLUG-IN",
+      "anoModelo": "26 / 27",
+      "pps": 617520,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 617520,
+        "TOYOTA GBH": 617520,
+        "TOYOTA ES": 617520,
+        "TOYOTA LESTE & ZM": 617520,
+        "TOYOTA TRIMG": 617520
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "NX 450H+ - PLUG-IN",
+      "anoModelo": "26 / 27",
+      "pps": 499990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 499990,
+        "TOYOTA GBH": 499990,
+        "TOYOTA ES": 499990,
+        "TOYOTA LESTE & ZM": 499990,
+        "TOYOTA TRIMG": 499990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "RZ 500E",
+      "anoModelo": "26 / 27",
+      "pps": 502520,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 502520,
+        "TOYOTA GBH": 502520,
+        "TOYOTA ES": 502520,
+        "TOYOTA LESTE & ZM": 502520,
+        "TOYOTA TRIMG": 502520
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "NX 350H - DYNAMIC",
+      "anoModelo": "26 / 27",
+      "pps": 409990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 409990,
+        "TOYOTA GBH": 409990,
+        "TOYOTA ES": 409990,
+        "TOYOTA LESTE & ZM": 409990,
+        "TOYOTA TRIMG": 409990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "NX 350H - LUXURY",
+      "anoModelo": "26 / 27",
+      "pps": 429990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 429990,
+        "TOYOTA GBH": 429990,
+        "TOYOTA ES": 429990,
+        "TOYOTA LESTE & ZM": 429990,
+        "TOYOTA TRIMG": 429990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "NX 350H - F-SPORT",
+      "anoModelo": "26 / 27",
+      "pps": 474990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 474990,
+        "TOYOTA GBH": 474990,
+        "TOYOTA ES": 474990,
+        "TOYOTA LESTE & ZM": 474990,
+        "TOYOTA TRIMG": 474990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "ES 350H",
+      "anoModelo": "26 / 27",
+      "pps": 474990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 474990,
+        "TOYOTA GBH": 474990,
+        "TOYOTA ES": 474990,
+        "TOYOTA LESTE & ZM": 474990,
+        "TOYOTA TRIMG": 474990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "ES 500E",
+      "anoModelo": "26 / 27",
+      "pps": 474990,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 474990,
+        "TOYOTA GBH": 474990,
+        "TOYOTA ES": 474990,
+        "TOYOTA LESTE & ZM": 474990,
+        "TOYOTA TRIMG": 474990
+      },
+      "observacao": "*",
+      "tipoAutorizacao": "REGIONAL"
+    },
+    {
+      "familia": "LEXUS",
+      "modelo": "UX 300H",
+      "anoModelo": "26 / 27",
+      "pps": 317520,
+      "margem": 0.08,
+      "lb": 0,
+      "bonus": 0,
+      "regionais": {
+        "TOYOTA BRASILIA": 317520,
+        "TOYOTA GBH": 317520,
+        "TOYOTA ES": 317520,
+        "TOYOTA LESTE & ZM": 317520,
+        "TOYOTA TRIMG": 317520
+      },
+      "observacao": "*",
       "tipoAutorizacao": "REGIONAL"
     }
   ]

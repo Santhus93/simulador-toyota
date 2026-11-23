@@ -1,26 +1,25 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import politica from "../data/politica.json";
 
 interface Modelo {
+  familia: string;
   modelo: string;
   anoModelo: string;
   pps: number;
   margem: number;
   lb: number;
   bonus: number;
-  regionais: Record<string, number>;
+  regionais: Record<string, number | null>;
   observacao: string;
   tipoAutorizacao?: string;
 }
 
-// ===== Helpers de mascara monetaria (R$ 0.000,00) =====
-
-function formatarDigitosParaMoeda(digitos: string): string {
-  const somenteNumeros = digitos.replace(/\D/g, "");
+function formatarDigitosParaMoeda(valor: string): string {
+  const somenteNumeros = valor.replace(/\D/g, "");
 
   if (!somenteNumeros) return "";
 
-  const valorEmCentavos = parseInt(somenteNumeros, 10);
+  const valorEmCentavos = Number.parseInt(somenteNumeros, 10);
   const valorEmReais = valorEmCentavos / 100;
 
   return valorEmReais.toLocaleString("pt-BR", {
@@ -38,82 +37,94 @@ function moedaParaNumero(valorFormatado: string): number {
     .replace(/\./g, "")
     .replace(",", ".");
 
-  const n = parseFloat(limpo);
-  return isNaN(n) ? 0 : n;
+  const numero = Number.parseFloat(limpo);
+  return Number.isFinite(numero) ? numero : 0;
 }
 
 function numeroParaMoedaInicial(valor: number): string {
   if (!valor) return "";
+
   return valor.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
 }
 
+function formatarMoeda(valor: number): string {
+  return valor.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
+function formatarPercentual(valor: number): string {
+  return (valor * 100).toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
+function nomeRegionalExibicao(regional: string): string {
+  return regional.replace("TOYOTA ", "");
+}
+
 export default function Home() {
+  const [familia, setFamilia] = useState("");
   const [modelo, setModelo] = useState("");
+  const [anoModelo, setAnoModelo] = useState("");
   const [regional, setRegional] = useState("");
-  const [valorNF, setValorNF] = useState<string>("");
-  const [bonus, setBonus] = useState<string>("");
-  const [incidencia, setIncidencia] = useState<string>("");
-  const [cliente, setCliente] = useState<string>("");
-  const [chassi, setChassi] = useState<string>("");
-  const [usadoNaTroca, setUsadoNaTroca] = useState<string>("");
+  const [valorNF, setValorNF] = useState("");
+  const [bonus, setBonus] = useState("");
+  const [incidencia, setIncidencia] = useState("");
+  const [cliente, setCliente] = useState("");
+  const [chassi, setChassi] = useState("");
+  const [usadoNaTroca, setUsadoNaTroca] = useState("");
   const [calculado, setCalculado] = useState(false);
   const [copiado, setCopiado] = useState(false);
 
-  const modelos: Modelo[] = politica.modelos;
+  const modelos = politica.modelos as Modelo[];
 
-  const regionais = [
-    "BYD BRASILIA",
-    "BYD GOIANIA",
-    "BYD BH",
-    "BYD ES - GRANDE VITORIA",
-    "BYD ES - INTERIOR",
-    "BYD GOIAS - INTERIOR",
-    "BYD MG - INTERIOR",
-  ];
+  const familias = useMemo(
+    () => [...new Set(modelos.map((item) => item.familia).filter(Boolean))],
+    [modelos]
+  );
 
-  const modeloSelecionado = modelos.find((item) => item.modelo === modelo);
+  const modelosDaFamilia = useMemo(
+    () => modelos.filter((item) => item.familia === familia),
+    [modelos, familia]
+  );
+
+  const nomesModelos = useMemo(
+    () => [...new Set(modelosDaFamilia.map((item) => item.modelo))],
+    [modelosDaFamilia]
+  );
+
+  const anosModelo = useMemo(
+    () => [
+      ...new Set(
+        modelosDaFamilia
+          .filter((item) => item.modelo === modelo)
+          .map((item) => item.anoModelo)
+      ),
+    ],
+    [modelosDaFamilia, modelo]
+  );
+
+  const modeloSelecionado = modelos.find(
+    (item) =>
+      item.familia === familia &&
+      item.modelo === modelo &&
+      item.anoModelo === anoModelo
+  );
+
+  const regionais = modeloSelecionado
+    ? Object.keys(modeloSelecionado.regionais)
+    : [];
 
   const valorMinimo =
     modeloSelecionado && regional
       ? modeloSelecionado.regionais[regional]
       : undefined;
-
-  // Ao selecionar o modelo, pre-preenche o Bonus sugerido pela politica
-  function handleSelecionarModelo(novoModelo: string) {
-    setModelo(novoModelo);
-    setCalculado(false);
-    const encontrado = modelos.find((item) => item.modelo === novoModelo);
-    if (encontrado) {
-      setBonus(numeroParaMoedaInicial(encontrado.bonus));
-    }
-  }
-
-  // Handler generico para qualquer campo de moeda
-  function handleCampoMoeda(
-    valorDigitado: string,
-    setter: (v: string) => void
-  ) {
-    const formatado = formatarDigitosParaMoeda(valorDigitado);
-    setter(formatado);
-    setCalculado(false);
-  }
-
-  function formatarMoeda(valor: number): string {
-    return valor.toLocaleString("pt-BR", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  }
-
-  function formatarPercentual(valor: number): string {
-    return (valor * 100).toLocaleString("pt-BR", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  }
 
   const pps = modeloSelecionado?.pps ?? 0;
   const margem = modeloSelecionado?.margem ?? 0;
@@ -123,25 +134,22 @@ export default function Home() {
   const nBonus = moedaParaNumero(bonus);
   const nIncidencia = moedaParaNumero(incidencia);
 
-  // Mantem a formula original da planilha para Valor Alcancado e margem.
   const desvioCalculo = pps - (nValorNF + nBonus - nIncidencia);
   const valorAlcancado = margemPPS - desvioCalculo;
-
-  // Desvio exibido: Valor NF - Valor Minimo.
   const desvio = nValorNF - (valorMinimo ?? 0);
 
   const percMargemMinima =
-    valorMinimo && valorMinimo > 0
+    valorMinimo != null && valorMinimo > 0
       ? (margemPPS - (pps - valorMinimo)) / valorMinimo
       : 0;
 
   const percMargemAlcancada =
     nValorNF + nBonus > 0 ? valorAlcancado / (nValorNF + nBonus) : 0;
 
-  // Desvio de margem: Margem Alcancada - Margem Minima.
   const desvioMargem = percMargemAlcancada - percMargemMinima;
 
   let alcada: "LIBERADO" | "AMARELO" | "VERMELHO" = "LIBERADO";
+
   if (percMargemAlcancada < percMargemMinima - 0.01) {
     alcada = "VERMELHO";
   } else if (percMargemAlcancada < percMargemMinima) {
@@ -160,135 +168,264 @@ export default function Home() {
       ? "#2e7d32"
       : alcada === "AMARELO"
       ? "#f9a825"
-      : "#ee2427"; // vermelho da marca BYD
+      : "#eb0a1e";
 
-  const podeCalcular = modelo !== "" && regional !== "" && valorNF !== "";
+  const politicaPendente = valorMinimo == null || valorMinimo <= 0;
+
+  const podeCalcular =
+    Boolean(familia && modelo && anoModelo && regional && valorNF) &&
+    Boolean(modeloSelecionado) &&
+    !politicaPendente;
+
+  function limparResultado() {
+    setCalculado(false);
+    setCopiado(false);
+  }
+
+  function handleSelecionarFamilia(novaFamilia: string) {
+    setFamilia(novaFamilia);
+    setModelo("");
+    setAnoModelo("");
+    setRegional("");
+    setBonus("");
+    limparResultado();
+  }
+
+  function handleSelecionarModelo(novoModelo: string) {
+    setModelo(novoModelo);
+    setAnoModelo("");
+    setRegional("");
+    setBonus("");
+    limparResultado();
+  }
+
+  function handleSelecionarAnoModelo(novoAnoModelo: string) {
+    setAnoModelo(novoAnoModelo);
+    setRegional("");
+    limparResultado();
+
+    const encontrado = modelos.find(
+      (item) =>
+        item.familia === familia &&
+        item.modelo === modelo &&
+        item.anoModelo === novoAnoModelo
+    );
+
+    setBonus(numeroParaMoedaInicial(encontrado?.bonus ?? 0));
+  }
+
+  function handleSelecionarRegional(novaRegional: string) {
+    setRegional(novaRegional);
+    limparResultado();
+  }
+
+  function handleCampoMoeda(
+    valorDigitado: string,
+    setter: (valor: string) => void
+  ) {
+    setter(formatarDigitosParaMoeda(valorDigitado));
+    limparResultado();
+  }
 
   function handleCalcular() {
+    if (!podeCalcular) return;
+
     setCalculado(true);
     setCopiado(false);
   }
 
   function montarTextoWhatsapp(): string {
     return (
-      `🚗 *SOLICITAÇÃO DE AUTORIZAÇÃO BYD*\n\n` +
-      `*Cliente:* ${cliente || "-"}\n` +
-      `*Chassi 0km:* ${chassi || "-"}\n` +
-      `*Usado na troca:* ${usadoNaTroca || "-"}\n\n` +
-      `*Modelo:* ${modelo}\n` +
-      `*Regional:* ${regional}\n\n` +
-      `*Valor NF:* R$ ${formatarMoeda(nValorNF)}\n` +
-      `*Valor Mínimo:* R$ ${formatarMoeda(valorMinimo ?? 0)}\n` +
-      `*Valor Alcançado:* R$ ${formatarMoeda(valorAlcancado)}\n` +
-      `*Bônus:* R$ ${formatarMoeda(nBonus)}\n` +
-      `*Incidência:* R$ ${formatarMoeda(nIncidencia)}\n` +         
-      `*Margem Mínima:* ${formatarPercentual(percMargemMinima)}%\n` +
-      `*Margem Alcançada:* ${formatarPercentual(percMargemAlcancada)}%\n\n` +
-      `*Desvio:* R$ ${formatarMoeda(desvio)}\n` +
-      `*Desvio de Margem:* ${desvioMargem > 0 ? "+" : ""}${formatarPercentual(desvioMargem)}%\n\n` +
+      `🚗 *SOLICITAÇÃO DE AUTORIZAÇÃO TOYOTA*
+
+` +
+      `*Cliente:* ${cliente || "-"}
+` +
+      `*Chassi 0km:* ${chassi || "-"}
+` +
+      `*Usado na troca:* ${usadoNaTroca || "-"}
+
+` +
+      `*Família:* ${familia}
+` +
+      `*Modelo:* ${modelo}
+` +
+      `*Ano/Modelo:* ${anoModelo}
+` +
+      `*Regional:* ${nomeRegionalExibicao(regional)}
+
+` +
+      `*Valor NF:* R$ ${formatarMoeda(nValorNF)}
+` +
+      `*Valor Mínimo:* R$ ${formatarMoeda(valorMinimo ?? 0)}
+` +
+      `*Valor Alcançado:* R$ ${formatarMoeda(valorAlcancado)}
+` +
+      `*Bônus:* R$ ${formatarMoeda(nBonus)}
+` +
+      `*Incidência:* R$ ${formatarMoeda(nIncidencia)}
+` +
+      `*Margem Mínima:* ${formatarPercentual(percMargemMinima)}%
+` +
+      `*Margem Alcançada:* ${formatarPercentual(percMargemAlcancada)}%
+
+` +
+      `*Desvio:* R$ ${formatarMoeda(desvio)}
+` +
+      `*Desvio de Margem:* ${desvioMargem > 0 ? "+" : ""}${formatarPercentual(
+        desvioMargem
+      )}%
+
+` +
       `*ALÇADA:* ${textoAlcada}`
     );
   }
 
   async function handleCopiarWhatsapp() {
     const texto = montarTextoWhatsapp();
+
     try {
       await navigator.clipboard.writeText(texto);
       setCopiado(true);
-      setTimeout(() => setCopiado(false), 2500);
-    } catch (e) {
-      alert("Não foi possível copiar automaticamente. Copie manualmente:\n\n" + texto);
+      window.setTimeout(() => setCopiado(false), 2500);
+    } catch {
+      alert(
+        `Não foi possível copiar automaticamente. Copie manualmente:
+
+${texto}`
+      );
     }
   }
 
   return (
     <div className="container">
       <div className="header-app">
-        <span className="badge-byd">BYD</span>
+        <span className="badge-byd">TOYOTA</span>
         <h1>Simulador Comercial</h1>
       </div>
 
-      <p className="subtitulo">
-       {politica.mesReferencia}
-      </p>
+      <p className="subtitulo">{politica.mesReferencia}</p>
 
       <div className="layout">
-        {/* ===== COLUNA ESQUERDA: FORMULÁRIO ===== */}
         <div className="coluna-form">
-          {/* MODELO + REGIONAL */}
-          <div className="form-grid">
+          <div className="form-grid-3">
             <div className="campo">
-              <label>Modelo</label>
+              <label htmlFor="familia">Família</label>
               <select
-                value={modelo}
-                onChange={(e) => handleSelecionarModelo(e.target.value)}
+                id="familia"
+                value={familia}
+                onChange={(event) =>
+                  handleSelecionarFamilia(event.target.value)
+                }
               >
                 <option value="">Selecione...</option>
-                {modelos.map((item, index) => (
-                  <option key={index} value={item.modelo}>
-                    {item.modelo}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="campo">
-              <label>Regional</label>
-              <select
-                value={regional}
-                onChange={(e) => {
-                  setRegional(e.target.value);
-                  setCalculado(false);
-                }}
-              >
-                <option value="">Selecione...</option>
-                {regionais.map((item) => (
+                {familias.map((item) => (
                   <option key={item} value={item}>
                     {item}
                   </option>
                 ))}
               </select>
             </div>
+
+            <div className="campo">
+              <label htmlFor="modelo">Modelo</label>
+              <select
+                id="modelo"
+                value={modelo}
+                onChange={(event) =>
+                  handleSelecionarModelo(event.target.value)
+                }
+                disabled={!familia}
+              >
+                <option value="">Selecione...</option>
+                {nomesModelos.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="campo">
+              <label htmlFor="anoModelo">Ano/Modelo</label>
+              <select
+                id="anoModelo"
+                value={anoModelo}
+                onChange={(event) =>
+                  handleSelecionarAnoModelo(event.target.value)
+                }
+                disabled={!modelo}
+              >
+                <option value="">Selecione...</option>
+                {anosModelo.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="campo">
+              <label htmlFor="regional">Regional</label>
+              <select
+                id="regional"
+                value={regional}
+                onChange={(event) =>
+                  handleSelecionarRegional(event.target.value)
+                }
+                disabled={!modeloSelecionado}
+              >
+                <option value="">Selecione...</option>
+                {regionais.map((item) => (
+                  <option key={item} value={item}>
+                    {nomeRegionalExibicao(item)}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
-          {/* DADOS DA NEGOCIAÇÃO - agrupado em card */}
           <div className="secao-card">
             <h3 className="secao-titulo">Dados da Negociação</h3>
 
-            {/* Valor NF + Bônus + Incidência, os 3 na mesma linha */}
             <div className="form-grid-3">
               <div className="campo">
-                <label>Valor NF (Preço Pleiteado)</label>
+                <label htmlFor="valorNF">Valor NF (Preço Pleiteado)</label>
                 <input
+                  id="valorNF"
                   type="text"
                   inputMode="numeric"
                   value={valorNF}
-                  onChange={(e) =>
-                    handleCampoMoeda(e.target.value, setValorNF)
+                  onChange={(event) =>
+                    handleCampoMoeda(event.target.value, setValorNF)
                   }
                   placeholder="R$ 0,00"
                 />
               </div>
 
               <div className="campo">
-                <label>Bônus</label>
+                <label htmlFor="bonus">Bônus</label>
                 <input
+                  id="bonus"
                   type="text"
                   inputMode="numeric"
                   value={bonus}
-                  onChange={(e) => handleCampoMoeda(e.target.value, setBonus)}
+                  onChange={(event) =>
+                    handleCampoMoeda(event.target.value, setBonus)
+                  }
                   placeholder="R$ 0,00"
                 />
               </div>
 
               <div className="campo">
-                <label>Incidência (Bancagem)</label>
+                <label htmlFor="incidencia">Incidência (Bancagem)</label>
                 <input
+                  id="incidencia"
                   type="text"
                   inputMode="numeric"
                   value={incidencia}
-                  onChange={(e) =>
-                    handleCampoMoeda(e.target.value, setIncidencia)
+                  onChange={(event) =>
+                    handleCampoMoeda(event.target.value, setIncidencia)
                   }
                   placeholder="R$ 0,00"
                 />
@@ -296,43 +433,44 @@ export default function Home() {
             </div>
           </div>
 
-          {/* DADOS DA VENDA - agrupado em card */}
           <div className="secao-card">
             <h3 className="secao-titulo">Dados da Venda</h3>
 
-            {/* Cliente + Chassi + Usado na troca, os 3 na mesma linha */}
             <div className="form-grid-3">
               <div className="campo">
-                <label>Cliente</label>
+                <label htmlFor="cliente">Cliente</label>
                 <input
+                  id="cliente"
                   type="text"
                   value={cliente}
-                  onChange={(e) => setCliente(e.target.value)}
+                  onChange={(event) => setCliente(event.target.value)}
                 />
               </div>
 
               <div className="campo">
-                <label>Chassi 0km</label>
+                <label htmlFor="chassi">Chassi 0km</label>
                 <input
+                  id="chassi"
                   type="text"
                   value={chassi}
-                  onChange={(e) => setChassi(e.target.value)}
+                  onChange={(event) => setChassi(event.target.value)}
                 />
               </div>
 
               <div className="campo">
-                <label>Usado na troca</label>
+                <label htmlFor="usadoNaTroca">Usado na troca</label>
                 <input
+                  id="usadoNaTroca"
                   type="text"
                   value={usadoNaTroca}
-                  onChange={(e) => setUsadoNaTroca(e.target.value)}
+                  onChange={(event) => setUsadoNaTroca(event.target.value)}
                 />
               </div>
             </div>
           </div>
 
-          {/* BOTÃO CALCULAR */}
           <button
+            type="button"
             className="botao-calcular"
             onClick={handleCalcular}
             disabled={!podeCalcular}
@@ -341,10 +479,12 @@ export default function Home() {
           </button>
         </div>
 
-        {/* ===== COLUNA DIREITA: INFO DO MODELO + RESULTADO ===== */}
         <div className="coluna-resultado">
           {modeloSelecionado && (
             <div className="card-info">
+              <p>
+                <strong>Família:</strong> {modeloSelecionado.familia}
+              </p>
               <p>
                 <strong>Ano/Modelo:</strong> {modeloSelecionado.anoModelo}
               </p>
@@ -352,18 +492,27 @@ export default function Home() {
                 <strong>PPS:</strong> R$ {formatarMoeda(pps)}
               </p>
               <p>
-                <strong>Margem PPS:</strong> R$ {formatarMoeda(margemPPS)} (
-                {(margem * 100).toFixed(0)}%)
+                <strong>Margem PPS:</strong> R$ {formatarMoeda(margemPPS)} ({(margem * 100).toFixed(0)}%)
               </p>
               <p>
-                <strong>Observação:</strong> {modeloSelecionado.observacao}
+                <strong>Observação:</strong>{" "}
+                {modeloSelecionado.observacao || "-"}
               </p>
-              {valorMinimo !== undefined && (
-                <p>
-                  <strong>Valor Mínimo ({regional}):</strong> R${" "}
-                  {formatarMoeda(valorMinimo)}
+
+              {politicaPendente && regional ? (
+                <p style={{ color: "#f9a825" }}>
+                  <strong>
+                    Política ainda não informada para esta regional.
+                  </strong>
                 </p>
-              )}
+              ) : valorMinimo != null && regional ? (
+                <p>
+                  <strong>
+                    Valor Mínimo ({nomeRegionalExibicao(regional)}):
+                  </strong>{" "}
+                  R$ {formatarMoeda(valorMinimo)}
+                </p>
+              ) : null}
             </div>
           )}
 
@@ -403,7 +552,7 @@ export default function Home() {
                         ? "#4caf50"
                         : desvioMargem >= -0.01
                         ? "#f9a825"
-                        : "#ee2427",
+                        : "#eb0a1e",
                   }}
                 >
                   {desvioMargem > 0 ? "+" : ""}
@@ -416,6 +565,7 @@ export default function Home() {
               </div>
 
               <button
+                type="button"
                 className="botao-whatsapp"
                 onClick={handleCopiarWhatsapp}
               >
