@@ -1,1 +1,47 @@
+name: Deploy GitHub Pages
 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/data/politica.json"
+      - "src/**"
+      - "package.json"
+      - "package-lock.json"
+      - "vite.config.ts"
+      - ".github/workflows/deploy.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Publicar no GitHub Pages
+        run: npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
