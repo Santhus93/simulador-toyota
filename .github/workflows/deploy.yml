@@ -5,7 +5,6 @@ on:
     branches:
       - main
     paths:
-      - "src/data/politica.json"
       - "src/**"
       - "package.json"
       - "package-lock.json"
@@ -28,6 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
@@ -41,7 +42,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Configurar Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Publicar no GitHub Pages
-        run: npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
+        run: |
+          npx gh-pages -d dist -r "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
